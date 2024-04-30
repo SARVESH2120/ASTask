@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { GridProvider } from "./GridContext";
+import Grid from "./Grid";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GridProvider>
+      <Grid>
+        <div className="grid-item"size={12}>
+          occupy 12 column
+        </div>
+        <div className="grid-item" size={6}>
+          occupy 6 column
+        </div>
+        <div className="grid-item" size={3}>
+          occupy 3 column
+        </div>
+        <div className="grid-item" size={2}>
+          occupy 2 column
+        </div>
+        <div className="grid-item" size={5}>
+          occupy 5 column
+        </div>
+      </Grid>
+    </GridProvider>
   );
-}
+};
 
 export default App;
